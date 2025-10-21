@@ -11,3 +11,4 @@ The following programs are included:
 - plot2.f
 - plot3.f
 - plotbase.f
+![x^2 function](pgplot.png)
