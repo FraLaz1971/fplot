@@ -4,7 +4,7 @@ C WRITES GIVEN NUMBER OF RANDOM POINTS
         INTEGER N,I
         integer m, clock, count
         integer seed(10000)
-        REAL X(10000),Y(10009)
+        REAL X(10000),Y(10000),C(10000)
 ! --- Seeding the random number generator ---
 ! Get the required size for the seed array
         call RANDOM_SEED(size = m)
@@ -22,16 +22,17 @@ c    allocate(seed(n))
 
 
 ! --- Generate an array of random numbers ---
-        call RANDOM_NUMBER(x)
-        call RANDOM_NUMBER(y)
+        call RANDOM_NUMBER(X)
+        call RANDOM_NUMBER(Y)
+        call RANDOM_NUMBER(C)
 c        print *, "Random array values: ", x,y
-100     PRINT *,'ENTER N. OF POINTS [1,10000]'
+100     WRITE(0,*) 'ENTER N. OF POINTS [1,10000]'
         READ *,N
         IF ((N.LT.1).OR.(N.GT.10000)) THEN
          PRINT *,'ERROR: out of range'
          GOTO 100
         END IF
         DO 10,I=1,N
-          PRINT *,X(I)*1000-500,Y(I)*1000-500
+          PRINT *,X(I)*1000-500,Y(I)*1000-500,C(I)*1000000000-500000000
 10      CONTINUE
       END
