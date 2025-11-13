@@ -35,5 +35,5 @@ c        print *, "Random array values: ", x,y
         DO 10,I=1,N
           PRINT *,X(I)*1000-500,Y(I)*1000-500,C(I)*1000000000-500000000
 10      CONTINUE
-	PRINT *,0.0,0.0,0.0
+C	PRINT *,0.0,0.0,0.0
       END
